@@ -34,7 +34,7 @@ instance/
 
 # IDE / Editor configs
 .vscode/
-.idea/
+../.idea/
 *.swp
 *.swo
 
