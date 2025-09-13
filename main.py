@@ -32,22 +32,21 @@ def contact():
         phone = request.form.get("phone")
         message = request.form.get("message")
 
-        # ------------- Send Email via SMTP -------------
-        email_message = f"""Subject: New Contact Form Submission
+        email_message = f"""Subject: New Contact Message
 
-From: {name}
+Name: {name}
 Email: {email}
 Phone: {phone}
-
 Message:
 {message}
 """
+
         with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-            connection.starttls()  # Secure connection
+            connection.starttls()
             connection.login(MY_EMAIL, MY_PASSWORD)
             connection.sendmail(
-                from_addr=MY_EMAIL,
-                to_addrs= MY_EMAIL,
+                from_addr=MY_EMAIL,         # You send it from yourself
+                to_addrs=MY_EMAIL,          # You receive it yourself
                 msg=email_message.encode("utf-8")
             )
 
