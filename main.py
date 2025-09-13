@@ -46,7 +46,7 @@ Message:
             connection.starttls()  # Secure connection
             connection.login(MY_EMAIL, MY_PASSWORD)
             connection.sendmail(
-                from_addr=request.form.get("email") ,
+                from_addr=MY_EMAIL,
                 to_addrs= MY_EMAIL,
                 msg=email_message.encode("utf-8")
             )
