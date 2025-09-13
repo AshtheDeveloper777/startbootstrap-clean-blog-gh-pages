@@ -13,6 +13,7 @@ app.secret_key = "a_very_secret_random_string_12345"
 POSTS_URL = "https://api.npoint.io/50edbc688818f379f5d9"
 MY_EMAIL="akashakash95327@gmail.com"
 MY_PASSWORD="thhq qghb zgme hbur"
+
 @app.route("/")
 def home():
     response = requests.get(POSTS_URL)
