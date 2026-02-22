@@ -1,6 +1,7 @@
 from flask import Flask, render_template,request,redirect,url_for,flash
 import requests
 import smtplib
+import os
 
 
 
@@ -11,8 +12,10 @@ app.secret_key = "a_very_secret_random_string_12345"
 
 # JSON API with all posts
 POSTS_URL = "https://api.npoint.io/50edbc688818f379f5d9"
-MY_EMAIL="akashakash95327@gmail.com"
-MY_PASSWORD="thhq qghb zgme hbur"
+import os
+
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 @app.route("/")
 def home():
